@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const LeftNav = () => {
     const [catagories, setCatagories] = useState([]);
@@ -6,13 +7,21 @@ const LeftNav = () => {
     useEffect(() => {
         fetch('http://localhost:5000/catagories')
             .then(res => res.json())
-            .then(data => console.log(data))
+            .then(data => setCatagories(data))
             .catch(error => console.error(error))
     }, [])
 
     return (
         <div>
-            <h2>LeftNav</h2>
+            <h4>All Category</h4>
+            <div className='ps-4'>
+                {
+                    catagories.map(category => <p
+                        key={category.id}
+                    >
+                        <Link to={`/category/${category.id}`} className='text-decoration-none text-black'>{category.name}</Link></p>)
+                }
+            </div>
         </div>
     );
 };
