@@ -18,7 +18,7 @@ const Header = () => {
                     I can be a React component, multiple React components, or just some text. I can be a React component, multiple React components, or just some text. I can be a React component, multiple React components, or just some text.
                 </Marquee>
             </div>
-            <Navbar bg="light" expand="lg">
+            <Navbar bg="light" expand="lg" className='mb-3'>
                 <Container>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
